@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
 <html>
 <head>
     <title>用户主页</title>
@@ -16,10 +17,8 @@
 </center>
 <hr>
 <center>
-    <a href="addUser.jsp">增加</a>
-    <a href="">删除</a>
-    <a href="">修改</a>
-    <a href="">查看</a>
+    <a href="${pageContext.request.contextPath}/view/addUser.jsp">增加</a>
+    <a href="${pageContext.request.contextPath}/show">查看</a>
 </center>
 </body>
 </html>

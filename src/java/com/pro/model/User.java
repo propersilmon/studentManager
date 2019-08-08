@@ -1,23 +1,9 @@
 package com.pro.model;
 
 import java.util.Date;
+import java.util.List;
 
 public class User {
-
-    /**
-     * DROP TABLE IF EXISTS `sys_user`;
-     * CREATE TABLE `sys_user` (
-     *   `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '用户ID',
-     *   `name` varchar(225) DEFAULT NULL COMMENT '用户名称',
-     *   `age` varchar(225) DEFAULT NULL COMMENT '年龄',
-     *   `sex` varchar(225) DEFAULT NULL COMMENT '性别',
-     *   `hobby` varchar(225) DEFAULT NULL COMMENT '爱好',
-     *   `login_name` varchar(255) DEFAULT NULL COMMENT '登录名',
-     *   `password` varchar(255) DEFAULT NULL COMMENT '密码',
-     *   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
-     *   PRIMARY KEY (`user_id`)
-     * ) ENGINE=InnoDB AUTO_INCREMENT=1264 DEFAULT CHARSET=utf8 COMMENT='用户';
-     */
 
 //    用户ID
     private int user_id;
@@ -35,6 +21,17 @@ public class User {
     private String password;
 //    创建时间
     private Date create_time;
+
+//    用户角色
+    private List<Role> roleList;
+
+    public List<Role> getRoleList() {
+        return roleList;
+    }
+
+    public void setRoleList(List<Role> roleList) {
+        this.roleList = roleList;
+    }
 
     public User() {
         super();
@@ -104,6 +101,17 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public User(int user_id, String name, String age, String sex, String hobby, String login_name, String password, Date create_time) {
+        this.user_id = user_id;
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.hobby = hobby;
+        this.login_name = login_name;
+        this.password = password;
+        this.create_time = create_time;
     }
 
     public Date getCreate_time() {
